@@ -28,7 +28,7 @@ You'll want to edit the following configuration options accordingly:
 ```
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'whiskerboard',
         'USER': 'whiskerboard',
         'PASSWORD': 'supersekritpassword',
@@ -56,7 +56,7 @@ Use the following command to run whiskerboard locally using the built in Python 
 
     $ ./manage.py runserver
 
-Now head over to http://myamazingboard.ep.io/admin/ and login with the account you created when you deployed. You'll want to set the name of your board by clicking on "sites". Edit the single entry called "example.com" and enter a name for your board.
+Now head over to the URL printed to stdout and login with the account you created when you deployed. You'll want to set the name of your board by clicking on "sites". Edit the single entry called "example.com" and enter a name for your board.
 
 Back on the admin home page, click on "services" and add the things you want to report the status of (website, API etc). To change the status of a service add an event for it.
 
