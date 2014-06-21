@@ -27,7 +27,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-openshift/*
+openshift
 
 # Installer logs
 pip-log.txt
