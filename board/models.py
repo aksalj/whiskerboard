@@ -1,6 +1,7 @@
 from datetime import datetime, date, timedelta
 from django.db import models
 
+
 class Service(models.Model):
     """
     A service to track.
@@ -56,12 +57,12 @@ class Service(models.Model):
             results.append(stats[k])
             
         return results
-    
 
 
 class StatusManager(models.Manager):
     def default(self):
         return self.get_query_set().filter(severity=10)[0]
+
 
 class Status(models.Model):
     """

@@ -13,6 +13,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+data/
 bin/
 build/
 develop-eggs/
@@ -26,6 +27,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+openshift/*
 
 # Installer logs
 pip-log.txt
@@ -45,6 +47,7 @@ coverage.xml
 .mr.developer.cfg
 .project
 .pydevproject
+.idea/*
 
 # Rope
 .ropeproject

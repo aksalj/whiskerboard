@@ -1,5 +1,6 @@
 Django==1.3
 South==0.7.3
+fabric
 Unipath
 django-redis-cache
 #django-auth-ldap

@@ -40,9 +40,9 @@ MIDDLEWARE_CLASSES = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'whiskerboard',
-        'USER': '',
-        'PASSWORD': '',
+        'NAME': 'data/whiskerboard.db',
+        'USER': 'whiskerboard',
+        'PASSWORD': 'whiskerboard',
         'HOST': '',
         'PORT': '',
     }
