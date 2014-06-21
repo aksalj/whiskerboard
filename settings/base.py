@@ -1,4 +1,6 @@
 from unipath import FSPath as Path
+import os
+
 PROJECT_DIR = Path(__file__).absolute().ancestor(2)
 
 ######################################
@@ -40,11 +42,11 @@ MIDDLEWARE_CLASSES = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'data/whiskerboard.db',
-        'USER': 'whiskerboard',
-        'PASSWORD': 'whiskerboard',
-        'HOST': '',
-        'PORT': '',
+        'NAME': os.environ['WB_DB_NAME'],
+        'USER': os.environ['WB_DB_USER'],
+        'PASSWORD': os.environ['WB_DB_PASSWORD'],
+        'HOST': os.environ['WB_DB_HOST'],
+        'PORT': os.environ['WB_DB_PORT'],
     }
 }
 
