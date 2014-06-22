@@ -1,5 +1,5 @@
 *.pyc
-static_root/
+collected_static/
 *.un~
 .*.sw*
 .DS_Store

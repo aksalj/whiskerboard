@@ -7,5 +7,6 @@ MANAGE_SCRIPT = HOME_DIR + "/manage.py"
 
 
 if __name__ == "__main__":
+    local(MANAGE_SCRIPT + " collectstatic --noinput")
     local(MANAGE_SCRIPT + " syncdb")
     local(MANAGE_SCRIPT + " migrate")

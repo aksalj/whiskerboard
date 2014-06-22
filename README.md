@@ -29,8 +29,3 @@ API Documentation
 Visit the [wiki](http://github.com/sijis/whiskerboard/wiki) page on details about the API.
 
 You may also find useful the [whiskerboard-tools](http://github.com/sijis/whiskerboard-tools) repository.
-
-TODO
-----
-- Prep to run on `Apache` + `mod_wsgi`
-

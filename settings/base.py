@@ -1,6 +1,6 @@
 import os
 
-PROJECT_ROOT = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
 ######################################
 # Main
@@ -27,7 +27,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'board',
-    'tastypie',
+    'tastypie'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,7 +116,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 ######################################
