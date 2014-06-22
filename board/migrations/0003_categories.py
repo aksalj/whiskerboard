@@ -9,67 +9,57 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
 
-        # Adding model 'Service'
-        db.create_table('board_service', (
+        # Adding model 'Category'
+        db.create_table('board_category', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50, db_index=True)),
             ('description', self.gf('django.db.models.fields.CharField')(max_length=255)),
         ))
-        db.send_create_signal('board', ['Service'])
+        db.send_create_signal('board', ['Category'])
 
-        # Adding model 'Status'
-        db.create_table('board_status', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50, db_index=True)),
-            ('description', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('severity', self.gf('django.db.models.fields.IntegerField')()),
-            ('image', self.gf('django.db.models.fields.CharField')(max_length=100)),
-        ))
-        db.send_create_signal('board', ['Status'])
-
-        # Adding model 'Event'
-        db.create_table('board_event', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('service', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['board.Service'])),
-            ('status', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['board.Status'])),
-            ('message', self.gf('django.db.models.fields.TextField')()),
-            ('start', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
-            ('informational', self.gf('django.db.models.fields.BooleanField')(default=False)),
-        ))
-        db.send_create_signal('board', ['Event'])
+        # Adding field 'Service.category'
+        db.add_column('board_service',
+                      'category',
+                      self.gf('django.db.models.fields.related.ForeignKey')(related_name='services', null=True,
+                                                                            to=orm['board.Category']),
+                      keep_default=False)
 
     def backwards(self, orm):
 
-        # Deleting model 'Service'
-        db.delete_table('board_service')
+        # Deleting model 'Category'
+        db.delete_table('board_category')
 
-        # Deleting model 'Status'
-        db.delete_table('board_status')
-
-        # Deleting model 'Event'
-        db.delete_table('board_event')
+        # Deleting field 'Service.category'
+        db.delete_column('board_service', 'category_id')
 
     models = {
+        'board.category': {
+            'Meta': {'ordering': "('name',)", 'object_name': 'Category'},
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'})
+        },
         'board.event': {
             'Meta': {'ordering': "('-start',)", 'object_name': 'Event'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'informational': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'message': ('django.db.models.fields.TextField', [], {}),
-            'service': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['board.Service']"}),
+            'service': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'events'", 'to': "orm['board.Service']"}),
             'start': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'status': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['board.Status']"})
+            'status': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'events'", 'to': "orm['board.Status']"})
         },
         'board.service': {
-            'Meta': {'object_name': 'Service'},
+            'Meta': {'ordering': "('name',)", 'object_name': 'Service'},
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'services'", 'null': 'True', 'to': "orm['board.Category']"}),
             'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50', 'db_index': 'True'})
         },
         'board.status': {
-            'Meta': {'object_name': 'Status'},
+            'Meta': {'ordering': "('severity',)", 'object_name': 'Status'},
             'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.CharField', [], {'max_length': '100'}),

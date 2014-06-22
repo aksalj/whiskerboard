@@ -1,14 +1,17 @@
-from unipath import FSPath as Path
+import os
 
-PROJECT_DIR = Path(__file__).absolute().ancestor(2)
+PROJECT_ROOT = os.path.dirname(__file__)
 
 ######################################
 # Main
 ######################################
 
 DEBUG = True
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'board.urls'
 SITE_ID = 1
+
+# Missing by Default. Add your own unique key.
+SECRET_KEY = "zr=$!5*e#&%9ufb%7a9ztjr@2pu^w$&o+3!nhm*_9x_=4*wx0t"
 
 ######################################
 # Apps
@@ -24,6 +27,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'board',
+    'tastypie',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -40,12 +44,13 @@ MIDDLEWARE_CLASSES = (
 
 DATABASES = {
     'default': {
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': "data/database.db",
-        'USER': "whiskerboard",
-        'PASSWORD': "whiskerboard",
-        'HOST': "",
-        'PORT': "",
+        'NAME': 'whiskerboard.sqlite3',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -53,8 +58,8 @@ DATABASES = {
 # Localisation
 ######################################
 
-TIME_ZONE = 'Europe/London'
-LANGUAGE_CODE = 'en-gb'
+TIME_ZONE = 'America/Chicago'
+LANGUAGE_CODE = 'en-US'
 USE_I18N = True
 USE_L10N = True
 
@@ -72,9 +77,15 @@ MANAGERS = ADMINS
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
+            'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
@@ -92,22 +103,21 @@ LOGGING = {
 # Media/Static
 ######################################
 
-MEDIA_ROOT = PROJECT_DIR.parent.child('data')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = ''
+MEDIA_URL = ''
 
-STATIC_ROOT = PROJECT_DIR.child('static_root')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'collected_static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    str(PROJECT_DIR.child('static')),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 ######################################
@@ -122,7 +132,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    PROJECT_DIR.child('templates'),
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -134,4 +144,3 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     'board.context_processors.current_site',
 )
-
