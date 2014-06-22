@@ -1,8 +1,8 @@
 from __future__ import absolute_import
 from django.core.exceptions import ImproperlyConfigured
-import os
 
 from .base import *
+from .live import *
 
 try:
     from .local import *
