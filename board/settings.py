@@ -11,7 +11,7 @@ ROOT_URLCONF = 'board.urls'
 SITE_ID = 1
 
 # Missing by Default. Add your own unique key.
-SECRET_KEY = "zr=$!5*e#&%9ufb%7a9ztjr@2pu^w$&o+3!nhm*_9x_=4*wx0t"
+SECRET_KEY = "saEn6GUkqHYQNrwoYn0VuHHNDKXSa8hNt1UOQoEXpP6XeFyW1jpTExYqsbOq"
 
 ######################################
 # Apps
@@ -44,11 +44,10 @@ MIDDLEWARE_CLASSES = (
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'whiskerboard.sqlite3',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'whiskerboard',
+        'PASSWORD': '6Z75kPBNmrIswBDdrsIT',
         'HOST': '',
         'PORT': '',
     }

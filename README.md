@@ -5,6 +5,7 @@ Whiskerboard is a status board for websites, services and APIs, like Amazon's [A
 
 It is heavily based on [Stashboard](http://www.stashboard.org/). Unlike Stashboard, it uses vanilla Django, so you aren't stuck using Google App Engine.
 
+Have a look at the demo (if it's running!): [http://status.aksalj.me](http://status.aksalj.me).
 
 Quick start guide
 -----------------

@@ -3,8 +3,8 @@ static_root/
 *.un~
 .*.sw*
 .DS_Store
-data/*.sqlite3
-data/*.db
+*.sqlite3
+*.db
 
 
 .idea
