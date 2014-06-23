@@ -35,4 +35,7 @@ DATABASES = {
     }
 }
 
+# Override STATIC_ROOT
+STATIC_ROOT = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static')
+
 '''
