@@ -5,11 +5,11 @@ This wiki will document the REST-API for Whiskerboard.
 
 Documentation
 -------------
-- [[Services]]
-- [[Categories]]
-- [[Events]]
-- [[Statuses]]
-- [[Endpoints and Schemas | Endpoints_and_Schemas]]
+- [Services](Services.md)
+- [Categories](Categories.md)
+- [Events](Events.md)
+- [Statuses](Statuses.md)
+- [Endpoints and Schemas](Endpoints_and_Schemas.md)
 
 
 Author

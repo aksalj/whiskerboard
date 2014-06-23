@@ -1,2 +1,2 @@
 from settings.base import *
-from settings.live import *
+from settings.cloud import *

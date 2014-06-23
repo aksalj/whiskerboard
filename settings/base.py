@@ -11,7 +11,7 @@ ROOT_URLCONF = 'board.urls'
 SITE_ID = 1
 
 # Missing by Default. Add your own unique key.
-SECRET_KEY = "saEn6GUkqHYQNrwoYn0VuHHNDKXSa8hNt1UOQoEXpP6XeFyW1jpTExYqsbOq"
+SECRET_KEY = "$dy97h-hc1=ue)$$5v76=-(*3e3k6nq%%*gaz*pn9^_4!rfy1*"
 
 ######################################
 # Apps
@@ -45,7 +45,7 @@ MIDDLEWARE_CLASSES = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'whiskerboard.sqlite3',
+        'NAME': 'sqlite3.db',
         'USER': 'whiskerboard',
         'PASSWORD': '6Z75kPBNmrIswBDdrsIT',
         'HOST': '',
@@ -116,7 +116,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 ######################################

@@ -10,7 +10,7 @@ Have a look at the demo (if it's running!): [http://status.aksalj.me](http://sta
 Quick start guide
 -----------------
 
-    $ git clone git@github.com:sijis/whiskerboard.git
+    $ git clone git@github.com:aksalj/whiskerboard.git
     $ cd whiskerboard
     $ sudo pip install -r requirements.txt
     $ Add a "SECRET_KEY = 'EnterABunchOfRandomCharactersHere'" to settings/base.py
