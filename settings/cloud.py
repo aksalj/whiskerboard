@@ -7,7 +7,15 @@ import imp
 
 '''
 
+# Turn off debug
 DEBUG = False
+
+if not DEBUG:
+    ALLOWED_HOSTS = [
+        # IMPORTANT: See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
+        'status.aksalj.me'
+    ]
+
 
 # Load the OpenShift helper library
 lib_path = os.environ['OPENSHIFT_REPO_DIR'] + 'libs/'
