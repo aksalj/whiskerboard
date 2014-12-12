@@ -1,33 +1,40 @@
 {% load url from future %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>{% block title %}{{ current_site.name }}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="{{ STATIC_URL}}css/style.css" type="text/css" media="screen">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/lumen/bootstrap.min.css" rel="stylesheet">
+{#    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/sandstone/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/superhero/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/united/bootstrap.min.css" rel="stylesheet">#}
+{#    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen">
     <link rel="alternate" type="application/atom+xml" title="Latest status updates." href="{% url 'feed' %}">
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="header">
+</head>
+<body>
+<div id="wrapper" class="container">
+    <div id="header" class="page-header">
         <img id="logo" src="{{ STATIC_URL }}images/logo.png" alt="Logo">
+
         <h1 id="title"><a href="/">{{ current_site.name }}</a></h1>
-      </div>
-      <div id="content">
+    </div>
+    <div id="content">
         {% block content %}
         {% endblock %}
-      </div>
-      <div id="push"></div>
     </div>
+
     <div id="footer">
-        <!-- Icons by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a> -->
-      <ul class="right">
-        <li id="powered">Powered by <a href="http://github.com/aksalj/whiskerboard">Whiskerboard</a></li>
-      </ul>
+        <ul class="pull-right">
+            <li id="powered">Powered by <a href="http://github.com/aksalj/whiskerboard">Whiskerboard</a></li>
+        </ul>
     </div>
-    {% block js %}
-    {% endblock %}
-  </body>
+</div>
+
+{% block js %}
+{% endblock %}
+</body>
 </html>
 
