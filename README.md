@@ -13,9 +13,10 @@ Quick start guide
     $ git clone git@github.com:aksalj/whiskerboard.git
     $ cd whiskerboard
     $ sudo pip install -r requirements.txt
-    $ Add a "SECRET_KEY = 'EnterABunchOfRandomCharactersHere'" to settings/base.py
-        (Alternatively, use http://www.miniwebtool.com/django-secret-key-generator/ to create a secret key!)
+    $ # Add a "SECRET_KEY = 'EnterABunchOfRandomCharactersHere'" to settings/base.py
+      #  (Alternatively, use http://www.miniwebtool.com/django-secret-key-generator/ to create a secret key!)
     $ ./manage.py migrate
+    $ ./manage.py createsuperuser
     $ ./manage.py runserver
 
 You might need to install [pip](http://www.pip-installer.org/en/latest/installing.html).
@@ -29,10 +30,13 @@ Visit the [wiki](documentation/) page on details about the API.
 
 You may also find useful the [whiskerboard-tools](http://github.com/sijis/whiskerboard-tools) repository.
 
-Docker (Work in progress...)
-----------------------------
+`TODO`: Activate API!
 
-```shell
-$ docker build -t some_tag .
-$ docker run some_tag
-```
+Docker
+------
+
+
+    $ # Update .env with custom values
+    $ docker-compose up
+    
+`TODO`: Create superuser account on first build!
