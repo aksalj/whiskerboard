@@ -1,2 +1,3 @@
 from settings.base import *
-from settings.cloud import *
+# from settings.openshift import *
+# from settings.docker import *

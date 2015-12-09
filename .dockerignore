@@ -6,6 +6,6 @@ collected_static/
 *.sqlite3
 *.db
 
-
-.idea
-.openshift
+.git/
+.idea/
+.openshift/

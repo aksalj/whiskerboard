@@ -9,9 +9,8 @@ h3.date-range { color: #999; margin-top: 20px }
 #header h1 { margin: 15px; float: left; height: 40px; line-height: 40px; }
 #header h1 span { font-weight: normal; }
 #header h2 { margin: 15px 0; float: left; line-height: 67px; }
-/*#header a { color:#333; text-decoration: none; }*/
-/*#header a:hover { color:#666; }*/
 #logo { height: 40px; float: left; margin: 15px 0; }
+#title a { text-decoration: none; }
 
 #status { height: 200px; }
 #status h2 { font-size: 60px; color: #FFF; text-align: center; padding-top: 65px; text-shadow: 2px 2px 0px #000; }
