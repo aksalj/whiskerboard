@@ -26,8 +26,16 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'board',
-    # 'tastypie'
+    'tastypie'
 )
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -56,8 +64,8 @@ DATABASES = {
 # Localisation
 ######################################
 
-TIME_ZONE = 'America/Chicago'
-LANGUAGE_CODE = 'en-US'
+TIME_ZONE = 'Africa/Nairobi'
+LANGUAGE_CODE = 'en-GB'
 USE_I18N = True
 USE_L10N = True
 
@@ -115,7 +123,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-   # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 ######################################

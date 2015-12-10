@@ -1,11 +1,18 @@
 # encoding: utf-8
-from django.db import migrations, models
+import os
+from django.db import migrations
+from django.contrib.auth.models import User
 
 
 def forwards(apps, schema_editor):
     if not schema_editor.connection.alias == 'default':
         return
-    # TODO: Create initial users
+
+    # Create initial admin
+    username = os.getenv('ADMIN_USER', 'admin')
+    email = os.getenv('ADMIN_EMAIL', 'admin@localhost')
+    pwd = os.getenv('ADMIN_PASSWORD', 'admin')
+    User.objects.create_superuser(username, email, pwd)
 
 
 class Migration(migrations.Migration):

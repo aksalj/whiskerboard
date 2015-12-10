@@ -13,30 +13,25 @@ Quick start guide
     $ git clone git@github.com:aksalj/whiskerboard.git
     $ cd whiskerboard
     $ sudo pip install -r requirements.txt
-    $ # Add a "SECRET_KEY = 'EnterABunchOfRandomCharactersHere'" to settings/base.py
-      #  (Alternatively, use http://www.miniwebtool.com/django-secret-key-generator/ to create a secret key!)
     $ ./manage.py migrate
-    $ ./manage.py createsuperuser
-    $ ./manage.py runserver
+    $ ./manage.py runserver 8000
 
-You might need to install [pip](http://www.pip-installer.org/en/latest/installing.html).
-Back on the admin home page, click on "services" and add the things you want to report the status of (website, API etc).
-To change the status of a service add an event for it.
+Now open `http://localhost:8000`; `admin` is the default username and password. 
+
+Back on the admin home page, click on `Services` and add the things you want to report the status of (website, API etc).
+To change the status of a service add an `Event` for it. Or you could group your services into `Categories`...
+
+`IMPORTANT`:  You need to change `SECRET_KEY` in settings when you go to production!
 
 API (Work in progress...)
 -------------------------
 
-Visit the [wiki](documentation/) page on details about the API.
-
-You may also find useful the [whiskerboard-tools](http://github.com/sijis/whiskerboard-tools) repository.
+You can have your services fire up events via a simple API. Visit the [wiki](documentation/) page on details about the API.
 
 `TODO`: Activate API!
 
 Docker
 ------
 
-
-    $ # Update .env with custom values
+    $ # Create a local.env; See .env for sample
     $ docker-compose up
-    
-`TODO`: Create superuser account on first build!

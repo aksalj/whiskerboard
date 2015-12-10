@@ -1,9 +1,10 @@
 from tastypie import fields
-from tastypie.resources import ModelResource
-from board.models import Service, Category, Status, Event
-from tastypie.constants import ALL, ALL_WITH_RELATIONS
-from tastypie.authentication import BasicAuthentication
 from tastypie.authorization import DjangoAuthorization
+from tastypie.constants import ALL
+from tastypie.resources import ModelResource
+
+from board.models import Service, Category, Status, Event
+from tastypie.authentication import BasicAuthentication
 
 
 # Authentication class noted from http://stackoverflow.com/a/12273403

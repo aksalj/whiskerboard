@@ -1,9 +1,12 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
+from django.contrib import admin
+
+# from tastypie.api import Api
+# from board.api import ServiceResource, CategoryResource, StatusResource, EventsResource
+
 from board.feeds import EventFeed
 from board.views import IndexView, ServiceView
-# from board.api import ServiceResource, CategoryResource, StatusResource, EventsResource
-# from tastypie.api import Api
-from django.contrib import admin
+
 
 admin.autodiscover()
 
