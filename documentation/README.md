@@ -1,17 +1,14 @@
 Welcome to Wiki
 ================
 
-This wiki will document the REST-API for Whiskerboard.
+This wiki will document Whiskerboard.
 
 Documentation
 -------------
-- [Services](Services.md)
-- [Categories](Categories.md)
-- [Events](Events.md)
-- [Statuses](Statuses.md)
-- [Endpoints and Schemas](Endpoints_and_Schemas.md)
+- [API](API.md)
 
 
-Author
-------
+Authors
+-------
+ - [Salama AB](https://github.com/aksalj)
  - [Sijis Aviles](https://github.com/sijis)
