@@ -3,7 +3,7 @@ import imp
 #
 # Sample docker settings
 #
-'''
+
 # TODO: Turn off debug
 DEBUG = True
 
@@ -27,4 +27,3 @@ DATABASES = {
         'PORT': 3306,
     }
 }
-'''

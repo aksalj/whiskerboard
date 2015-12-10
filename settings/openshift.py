@@ -5,8 +5,6 @@ import imp
 # See https://github.com/openshift/django-example
 #
 
-'''
-
 # Turn off debug
 DEBUG = False
 
@@ -45,5 +43,3 @@ DATABASES = {
 
 # Override STATIC_ROOT
 STATIC_ROOT = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static')
-
-'''
