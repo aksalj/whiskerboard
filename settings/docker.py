@@ -23,7 +23,7 @@ DATABASES = {
         'NAME': os.environ['MYSQL_DATABASE'],
         'USER': os.environ['MYSQL_USER'],
         'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': 'db',  # host name from /etc/hosts
+        'HOST': os.environ['MYSQL_HOST'],  # Ideally, host name from /etc/hosts
         'PORT': 3306,
     }
 }
