@@ -1,6 +1,8 @@
 Whiskerboard
 ============
 
+### Important: This project is no longer maintained.
+
 Whiskerboard is a status board for websites, services and APIs, like Amazon's [AWS status page](http://status.aws.amazon.com/).
 
 It is heavily based on [Stashboard](http://www.stashboard.org/). Unlike Stashboard, it uses vanilla Django, so you aren't stuck using Google App Engine.
@@ -23,12 +25,10 @@ To change the status of a service add an `Event` for it. Or you could group your
 
 `IMPORTANT`:  You need to change `SECRET_KEY` in settings when you go to production!
 
-API (Work in progress...)
--------------------------
+API
+---
 
 You can have your services fire up events via a simple API. Visit the [wiki](documentation/) page on details about the API.
-
-`TODO`: Activate API!
 
 Docker
 ------
